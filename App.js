@@ -13,64 +13,59 @@ import {
   ScrollView,
   View,
   Text,
+  TextInput,
+  Button,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
+const SampleScreen = () => {
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <ScrollView>
+      <View style={styles.body}>
+        <Text style={styles.header}>Instamobile</Text>
+        <TextInput style = {styles.input} placeholder="Username" />
+        <TextInput style = {styles.input} placeholder="Password" />
+        <View style = {styles.button}><Button title="Login" /></View>
+        <Text style={styles.fblogin}>Login with Facebook</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  
+  body: {
+    flex: 1,
+  },
+  header: {
+    padding: 20,
+    fontSize: 40,
+    fontWeight: "bold",
+    marginTop: 100,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 5,
+    height: 40,
+    fontSize: 15,
+    borderColor: '#eaeaea',
+    backgroundColor: 'cyan',
+    paddingLeft: 10,
+    marginLeft: 15,
+    marginRight: 15,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  button: {
+    marginTop: 10,
+    margin: 15,
+  },
+  fblogin: {
+    color: '#7FBBF1',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 5,
+  }
 });
 
-export default App;
-
-
-// export default () => (
-//   <Text>Hello</Text>
-// )
+export default SampleScreen;
