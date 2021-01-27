@@ -1,84 +1,29 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- **/
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  TextInput,
-  Button,
-  Pressable,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+import { enableScreens } from 'react-native-screens';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createDrawerNavigator } from '@react-navigation/drawer'
+// import { ScrollView } from 'react-native';
+import SampleScreen1 from './loginScreen1';
+import SampleScreen2 from './loginScreen2';
 
-const SampleScreen = () => {
+enableScreens();
+// const Stack = createStackNavigator()
+const Tabs = createBottomTabNavigator()
+// const Drawer = createDrawerNavigator()
+
+const App = () => {
   console.log('SampleScreen')
   return (
-    <ScrollView>
-      <View style={styles.body}>
-        <Text style={styles.header}>Instamobile</Text>
-        <TextInput style={styles.input} placeholder="Username" />
-        <TextInput style={styles.input} placeholder="Password" />
-        {/* <View style={styles.button}> */}
-          <Pressable>
-            <Text style={styles.button}>Login</Text>
-          </Pressable>
-          {/* <Button title="Login" color="#3896F3" /> */}
-        {/* </View> */}
-        <Text style={styles.fblogin}>Login with Facebook</Text>
-      </View>
-    </ScrollView>
+    <NavigationContainer>
+      <Tabs.Navigator>
+        <Tabs.Screen name="screen1" component={SampleScreen1} />
+        <Tabs.Screen name="screen2" component={SampleScreen2} />
+      </Tabs.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  body: {
-    flex: 1,
-  },
-  header: {
-    padding: 20,
-    fontSize: 40,
-    fontWeight: 'bold',
-    marginTop: 100,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderRadius: 5,
-    height: 40,
-    fontSize: 15,
-    borderColor: '#eaeaea',
-    backgroundColor: '#FBFBFB',
-    color: '#E2E1E2',
-    paddingLeft: 10,
-    marginLeft: 15,
-    marginRight: 15,
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  button: {
-    height: 40,
-    marginTop: 10,
-    margin: 15,
-    padding: 10,
-    backgroundColor: "#3896F3",
-    color: "#FFFFFF",
-    borderRadius: 5,
-    textAlign: "center"
-  },
-  fblogin: {
-    color: '#5FAAEF',
-    fontSize: 16,
-    textAlign: 'center',
-    marginTop: 5,
-  },
-});
-
-export default SampleScreen;
+export default App;
