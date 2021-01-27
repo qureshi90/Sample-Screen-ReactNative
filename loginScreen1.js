@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- **/
-
 import React from 'react';
 import {
   StyleSheet,
@@ -14,10 +6,11 @@ import {
   Text,
   TextInput,
   Pressable,
+  Button
 } from 'react-native';
 
-const SampleScreen1 = () => {
-  console.log('SampleScreen')
+const SampleScreen1 = ({navigation}) => {
+  // console.log('SampleScreen')
   return (
     <View style={styles.body}>
       <Text style={styles.header}>Instamobile</Text>
@@ -27,6 +20,12 @@ const SampleScreen1 = () => {
         <Text style={styles.button}>Login</Text>
       </Pressable>
       <Text style={styles.fblogin}>Login with Facebook</Text>
+      <Text
+        style={styles.fblogin}
+        onPress={() =>
+          navigation.navigate('screen2', { name: 'sign up' })
+        }
+      >New User? Create an account</Text>
     </View>
   );
 };

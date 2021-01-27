@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- **/
-
 import React from 'react';
 import {
   StyleSheet,
@@ -18,7 +10,7 @@ import {
 
 const image = { uri: "https://i.pinimg.com/736x/4c/7a/b1/4c7ab1da89e96e9051005526164af8ed.jpg" };
 
-const SampleScreen2 = () => {
+const SampleScreen2 = ({navigation}) => {
   console.log('SampleScreen')
   return (
     <ImageBackground source={image} style={styles.image}>
@@ -48,7 +40,7 @@ const SampleScreen2 = () => {
           <Text style={styles.icon}>T</Text>
           <Text style={styles.icon}>F</Text>
         </View>
-        <Text style={styles.text}>Already have an account? Login</Text>
+        <Text style={styles.text}>Already have an account? <Text onPress={() => navigation.goBack()}>Login</Text></Text>
       </View>
     </ImageBackground>
   );
