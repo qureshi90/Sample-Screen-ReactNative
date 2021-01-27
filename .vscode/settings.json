@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "window.zoomLevel": 0,
+  "files.insertFinalNewline": true,
+  "workbench.startupEditor": "welcomePage",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.detectIndentation": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+}

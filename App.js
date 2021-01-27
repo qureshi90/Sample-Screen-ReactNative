@@ -4,32 +4,38 @@
  *
  * @format
  * @flow strict-local
-**/
+ **/
 
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
   Text,
   TextInput,
   Button,
+  Pressable,
 } from 'react-native';
 
 const SampleScreen = () => {
+  console.log('SampleScreen')
   return (
     <ScrollView>
       <View style={styles.body}>
         <Text style={styles.header}>Instamobile</Text>
-        <TextInput style = {styles.input} placeholder="Username" />
-        <TextInput style = {styles.input} placeholder="Password" />
-        <View style = {styles.button}><Button title="Login" /></View>
+        <TextInput style={styles.input} placeholder="Username" />
+        <TextInput style={styles.input} placeholder="Password" />
+        {/* <View style={styles.button}> */}
+          <Pressable>
+            <Text style={styles.button}>Login</Text>
+          </Pressable>
+          {/* <Button title="Login" color="#3896F3" /> */}
+        {/* </View> */}
         <Text style={styles.fblogin}>Login with Facebook</Text>
       </View>
     </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   body: {
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
   header: {
     padding: 20,
     fontSize: 40,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginTop: 100,
     marginBottom: 20,
     textAlign: 'center',
@@ -49,7 +55,8 @@ const styles = StyleSheet.create({
     height: 40,
     fontSize: 15,
     borderColor: '#eaeaea',
-    backgroundColor: 'cyan',
+    backgroundColor: '#FBFBFB',
+    color: '#E2E1E2',
     paddingLeft: 10,
     marginLeft: 15,
     marginRight: 15,
@@ -57,15 +64,21 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   button: {
+    height: 40,
     marginTop: 10,
     margin: 15,
+    padding: 10,
+    backgroundColor: "#3896F3",
+    color: "#FFFFFF",
+    borderRadius: 5,
+    textAlign: "center"
   },
   fblogin: {
-    color: '#7FBBF1',
+    color: '#5FAAEF',
     fontSize: 16,
     textAlign: 'center',
     marginTop: 5,
-  }
+  },
 });
 
 export default SampleScreen;
