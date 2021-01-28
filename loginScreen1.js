@@ -1,16 +1,13 @@
 import React from 'react';
 import {
   StyleSheet,
-  ScrollView,
   View,
   Text,
   TextInput,
   Pressable,
-  Button
 } from 'react-native';
 
 const SampleScreen1 = ({navigation}) => {
-  // console.log('SampleScreen')
   return (
     <View style={styles.body}>
       <Text style={styles.header}>Instamobile</Text>
